@@ -1,9 +1,13 @@
 <!doctype html>
-<html ng-app="drag">
-  <head>
-    <script src="http://code.angularjs.org/angular-1.1.0.min.js"></script>
-  </head>
-  <body>
-    <span draggable>Drag ME</span>
-  </body>
+<html lang="en">
+<head>
+<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+   <script type="text/javascript" src="../Controllers/userControllers.js"></script>
+</head>
+<body>
+   <div ng-app="myApp" ng-controller="showItem"">
+   	 Your name: <input type="text" ng-model="yourname" placeholder="World">
+    <hr> Hello {{yourname || 'World'}}! {{user.name}}
+   </div>
+</body>
 </html>
