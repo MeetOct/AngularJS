@@ -1,0 +1,11 @@
+<table>
+	<tr>
+		<td>Sender</td>
+		<td>Subject</td>
+		<td>Date</td>
+	</tr>
+	<tr ng-repeat="mail in mails">
+		<td>{{mail.sender}}</td>
+		<td><a href="#/{{mail.id}}">{{mail.subject}}</a> <td>{{mail.date}}</td>
+	</tr>
+</table>

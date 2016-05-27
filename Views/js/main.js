@@ -8,29 +8,32 @@ requirejs.config({
     //the paths config could be for a directory.
     paths: {
         angular:'angular',
-        userModel: 'Models/UserModel',
-        userControllers: 'Controllers/userControllers',
+        mailModel: 'Models/mailModel',
+        mainController: 'mainController',
+        appController: 'Controllers/appController',
+        userController: 'Controllers/userController',
         provider: 'Service/provider',
         service:'Service/service',
         factory:'Service/factory',
-        myApp:'app'
+        myApp:'app',
+        route: "route"
     },
 
     shim: {
         'angular': {
             exports: 'angular'
-        }
-        ,
-        'userControllers': {
-             deps: ["myApp"]
         },
         'myApp': {
              deps: ["angular"]
+        },
+        'userController': {
+             deps: ["mailModel"]
         }
     },
+    urlArgs: "bust=" + (new Date()).getTime() //防止读取缓存，调试用
 });
 
 // Start the main app logic.
-require(["angular","myApp","userControllers"],function(angular,myApp,userControllers){
-    angular.bootstrap(document,['TestAll']);
+require(["angular","myApp","route"],function(angular){
+    angular.bootstrap(document,['Testapp']);
 });

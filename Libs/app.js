@@ -1,3 +1,3 @@
 define(["angular"],function(angular){
-    return angular.module("TestAll",[]);
+	return angular.module("Testapp",[]);
 })
