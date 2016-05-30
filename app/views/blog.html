@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/vendor/bootstrap/js/bootstrap.js"></script>
+	<link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+	<div>
+		<div>
+			<h1><a href="#">Blog!</a></h1>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-2" data-ng-view>
+			</div>
+			<div class="col-md-2" data-ng-controller="linkCtrl">
+				<ul data-ng-repeat="link in links">
+				<a href="#/blogs/{{link.id}}/{{link.title}}" data-ng-bind="link.title"></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script data-main="/scripts/main.js" src="/vendor/requirejs.js"></script>
+</html>
